@@ -1,0 +1,42 @@
+// NumberComponent (Tenacity dropdown click GUI): a 3 unit high rounded track,
+// filled with the theme colour, and a 5 unit white knob inside a 7 unit ring
+// of the setting background colour.
+
+.noUi-target {
+    margin: 10px 0 8px;
+    height: 6px;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(45, 45, 45);
+    box-shadow: unset;
+    transition: background-color 250ms;
+
+    &:hover {
+        background-color: rgb(64, 64, 64);
+    }
+}
+
+.noUi-connects {
+    border-radius: 3px;
+}
+
+.noUi-connect {
+    background-color: var(--secondary-color);
+}
+
+.noUi-horizontal .noUi-handle {
+    width: 14px !important;
+    height: 14px !important;
+    top: -4px;
+    right: -7px;
+    border: solid 2px var(--tenacity-setting-color);
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: unset;
+    cursor: pointer;
+}
+
+.noUi-handle::after,
+.noUi-handle::before {
+    display: none;
+}

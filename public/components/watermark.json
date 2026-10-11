@@ -1,0 +1,42 @@
+{
+  "name": "Watermark",
+  "description": "Displays the client name.",
+  "enabled": true,
+  "singleton": true,
+  "alignment": {
+    "horizontalAlignment": "Left",
+    "horizontalOffset": 10,
+    "verticalAlignment": "Top",
+    "verticalOffset": 10
+  },
+  "values": [
+    {
+      "type": "CHOOSE",
+      "name": "Mode",
+      "value": "Tenacity",
+      "choices": [
+        "Tenacity",
+        "Plain Text",
+        "Neverlose",
+        "Tenasense",
+        "Tenabition",
+        "Logo"
+      ]
+    },
+    {
+      "type": "TEXT",
+      "name": "ClientName",
+      "value": "Tenacity"
+    },
+    {
+      "type": "TEXT",
+      "name": "Version",
+      "value": ""
+    },
+    {
+      "type": "BOOLEAN",
+      "name": "Lowercase",
+      "value": false
+    }
+  ]
+}

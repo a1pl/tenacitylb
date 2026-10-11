@@ -1,0 +1,129 @@
+{
+  "name": "ArrayList",
+  "description": "Displays your active modules.",
+  "enabled": true,
+  "singleton": true,
+  "alignment": {
+    "horizontalAlignment": "Right",
+    "horizontalOffset": 0,
+    "verticalAlignment": "Top",
+    "verticalOffset": 0
+  },
+  "values": [
+    {
+      "type": "BOOLEAN",
+      "name": "ShowTags",
+      "value": true
+    },
+    {
+      "type": "CHOOSE",
+      "name": "ItemAlignment",
+      "value": "Right",
+      "choices": [
+        "Left",
+        "Right"
+      ]
+    },
+    {
+      "type": "CHOOSE",
+      "name": "Order",
+      "value": "Descending",
+      "choices": [
+        "Ascending",
+        "Descending"
+      ]
+    },
+    {
+      "type": "BOOLEAN",
+      "name": "Important",
+      "value": false
+    },
+    {
+      "type": "CHOOSE",
+      "name": "Rectangle",
+      "value": "Top",
+      "choices": [
+        "None",
+        "Top",
+        "Side",
+        "Outline"
+      ]
+    },
+    {
+      "type": "CHOOSE",
+      "name": "TextShadow",
+      "value": "Black",
+      "choices": [
+        "Colored",
+        "Black",
+        "None"
+      ]
+    },
+    {
+      "type": "CHOOSE",
+      "name": "Animation",
+      "value": "Scale in",
+      "choices": [
+        "Move in",
+        "Scale in",
+        "None"
+      ]
+    },
+    {
+      "type": "BOOLEAN",
+      "name": "Bold",
+      "value": false
+    },
+    {
+      "type": "BOOLEAN",
+      "name": "SmallFont",
+      "value": false
+    },
+    {
+      "type": "FLOAT",
+      "name": "Height",
+      "value": 11,
+      "range": {
+        "min": 9,
+        "max": 20
+      }
+    },
+    {
+      "type": "INT",
+      "name": "ColorSeparation",
+      "value": 20,
+      "range": {
+        "min": 5,
+        "max": 100
+      }
+    },
+    {
+      "type": "INT",
+      "name": "ColorSpeed",
+      "value": 15,
+      "range": {
+        "min": 2,
+        "max": 30
+      }
+    },
+    {
+      "type": "BOOLEAN",
+      "name": "Background",
+      "value": true
+    },
+    {
+      "type": "BOOLEAN",
+      "name": "BackgroundColor",
+      "value": false
+    },
+    {
+      "type": "FLOAT",
+      "name": "BackgroundAlpha",
+      "value": 0.35,
+      "range": {
+        "min": 0,
+        "max": 1
+      }
+    }
+  ]
+}

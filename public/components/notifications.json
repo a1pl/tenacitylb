@@ -1,0 +1,59 @@
+{
+  "name": "Notifications",
+  "description": "Displays client notifications.",
+  "enabled": true,
+  "singleton": true,
+  "alignment": {
+    "horizontalAlignment": "Right",
+    "horizontalOffset": 10,
+    "verticalAlignment": "Bottom",
+    "verticalOffset": 36
+  },
+  "values": [
+    {
+      "type": "MULTI_CHOOSE",
+      "name": "Severities",
+      "value": [
+        "INFO",
+        "SUCCESS",
+        "ERROR",
+        "ENABLED",
+        "DISABLED"
+      ],
+      "choices": [
+        "INFO",
+        "SUCCESS",
+        "ERROR",
+        "ENABLED",
+        "DISABLED"
+      ],
+      "canBeNone": false
+    },
+    {
+      "type": "CHOOSE",
+      "name": "Mode",
+      "value": "Default",
+      "choices": [
+        "Default",
+        "SuicideX",
+        "Exhibition",
+        "Modern Exhibition"
+      ]
+    },
+    {
+      "type": "FLOAT",
+      "name": "Time",
+      "value": 2,
+      "range": {
+        "min": 1,
+        "max": 10
+      },
+      "suffix": "s"
+    },
+    {
+      "type": "BOOLEAN",
+      "name": "OnlyTitle",
+      "value": false
+    }
+  ]
+}

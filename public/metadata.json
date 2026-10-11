@@ -1,0 +1,205 @@
+{
+  "id": "tenacity",
+  "name": "Tenacity",
+  "version": "1.0.0",
+  "authors": [
+    "Tenacity"
+  ],
+  "colors": {
+    "Accent": "#56ab2f",
+    "Secondary": "#a8e063",
+    "Tint": "#000000"
+  },
+  "screens": [
+    "clickgui",
+    "title",
+    "proxymanager",
+    "multiplayer",
+    "altmanager",
+    "customize",
+    "singleplayer"
+  ],
+  "overlays": [
+    "basicmenu",
+    "hud",
+    "inventory",
+    "container",
+    "disconnected",
+    "browser"
+  ],
+  "components": [
+    "Watermark",
+    "TabGui",
+    "ArrayList",
+    "Notifications",
+    "Hotbar",
+    "Scoreboard",
+    "ArmorItems",
+    "InventoryStatistics",
+    "Inventory",
+    "CraftingInventory",
+    "EnderChestInventory",
+    "TargetHud",
+    "BlockCounter",
+    "Effects",
+    "Keystrokes",
+    "Taco",
+    "Image",
+    "Text",
+    "KeyBinds",
+    "ClosedCaptions"
+  ],
+  "fonts": [
+    "Inter-Black.ttf",
+    "Inter-Bold.ttf",
+    "Inter-ExtraBold.ttf",
+    "Inter-ExtraLight.ttf",
+    "Inter-Light.ttf",
+    "Inter-Medium.ttf",
+    "Inter-Regular.ttf",
+    "Inter-SemiBold.ttf",
+    "Inter-Thin.ttf",
+    "DuckSans-Regular.ttf",
+    "DuckSans-Bold.ttf",
+    "DuckSans-Thin.ttf",
+    "TenacityIcons.ttf",
+    "Neverlose.ttf",
+    "Tahoma.ttf",
+    "Tahoma-Bold.ttf",
+    "GreycliffCF-Medium.ttf",
+    "GreycliffCF-Bold.ttf"
+  ],
+  "backgrounds": [
+    {
+      "name": "background",
+      "types": [
+        "png"
+      ]
+    }
+  ],
+  "values": [
+    {
+      "type": "CHOOSE",
+      "name": "TenacityVersion",
+      "value": "Tenacity 5",
+      "choices": [
+        "Tenacity 5",
+        "Tenacity 6"
+      ]
+    },
+    {
+      "type": "CHOOSE",
+      "name": "ClickGuiStyle",
+      "value": "Dropdown",
+      "choices": [
+        "Dropdown",
+        "Modern",
+        "Compact"
+      ]
+    },
+    {
+      "type": "CHOOSE",
+      "name": "TenacityFont",
+      "value": "Auto",
+      "choices": [
+        "Auto",
+        "DuckSans",
+        "Greycliff CF"
+      ]
+    },
+    {
+      "type": "CHOOSE",
+      "name": "ThemePreset",
+      "value": "Custom",
+      "choices": [
+        "Custom",
+        "Tenacity",
+        "Little Leaf",
+        "Lush",
+        "Spearmint",
+        "Jade Green",
+        "Green Spirit",
+        "Mint Blue",
+        "Pacific Blue",
+        "Tropical Ice",
+        "Oh Happiness",
+        "Rosy Pink",
+        "Magenta",
+        "Hot Pink",
+        "Blush",
+        "Piglet",
+        "Lavender",
+        "Amethyst",
+        "Purple Fire",
+        "Mauve",
+        "Slight Ocean View",
+        "Moon Purple",
+        "Purplin",
+        "Deep Purple",
+        "Twitch",
+        "Grapefruit Sunset",
+        "Sunset Pink",
+        "Blaze Orange",
+        "Pastel",
+        "Roseanna",
+        "Haikus",
+        "Light Orange",
+        "Master Card",
+        "Back to the Future",
+        "Pink Blood",
+        "Neon Red",
+        "Red Coffee",
+        "Bighead",
+        "Red With White",
+        "Netflix",
+        "Frost",
+        "Chambray Blue",
+        "Solid Vault",
+        "Deep Sea Space",
+        "Dark Skies",
+        "Joomla",
+        "Nighthawk",
+        "Clear Sky",
+        "Between Night and Day",
+        "Sage Persuasion",
+        "Selenium",
+        "Koko Caramel",
+        "Color Of Sky",
+        "Margo",
+        "Lithium",
+        "Pale Wood",
+        "Portral",
+        "Deep Space",
+        "Lawrencium",
+        "Deep Ocean",
+        "eXpresso",
+        "Tranquil",
+        "Christmas",
+        "Superman",
+        "Minnesota Vikings",
+        "Miami Dolphins",
+        "Pizelex",
+        "Green to dark",
+        "Lizard",
+        "Atlas A",
+        "Atlas B",
+        "Atlas C"
+      ]
+    },
+    {
+      "type": "BOOLEAN",
+      "name": "PanelGradient",
+      "value": false
+    },
+    {
+      "type": "BOOLEAN",
+      "name": "OutlineAccent",
+      "value": true
+    },
+    {
+      "type": "BOOLEAN",
+      "name": "TransparentPanels",
+      "value": false
+    }
+  ]
+}
