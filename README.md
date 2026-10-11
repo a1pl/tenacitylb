@@ -36,6 +36,7 @@ These are in the LiquidBounce theme settings:
 | `PanelGradient`     | ClickGUI "Gradient": forces gradient panels for non-gradient themes.                              |
 | `OutlineAccent`     | ClickGUI "Outline Accent": when off, panels get a dark frame and header.                          |
 | `TransparentPanels` | ClickGUI "Transparent": panel colours at 75% opacity.                                             |
+| `SyncModuleColors`  | Lets the TenacityLB add-on copy the theme colours into modules such as ESP and Chams.             |
 
 Tenacity themes are a pair of colours. With the `Custom` preset, the **Accent** and **Secondary**
 colours are used. Their defaults are Tenacity 5's "Lush" theme (`#56AB2F` → `#A8E063`).

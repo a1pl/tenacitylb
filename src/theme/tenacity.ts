@@ -205,3 +205,79 @@ export const colorWheel = derived([now, clientFirst, clientSecond], ([$now, firs
     color3: backAndForth($now, 15, 180, first, second),
     color4: backAndForth($now, 15, 270, first, second),
 }));
+
+/**
+ * The TenacityLB add-on's PostProcessing module (port of Tenacity's PostProcessing).
+ * The add-on blurs behind the HUD; the bloom is drawn here, as a glow around HUD elements.
+ */
+export interface PostProcessing {
+    enabled: boolean;
+    bloom: boolean;
+    // Tenacity's Kawase bloom iterations x offset, used as the glow radius
+    radius: number;
+    glow: Record<string, boolean>;
+}
+
+export const postProcessing = writable<PostProcessing>({enabled: false, bloom: false, radius: 5, glow: {}});
+
+// HUD component name -> PostProcessing "Glow Options" name
+const glowNames: Record<string, string> = {
+    ArrayList: "Arraylist",
+    Watermark: "Watermark",
+    TargetHud: "TargetHud",
+    Notifications: "Notifications",
+    Keystrokes: "Keystrokes",
+    InventoryStatistics: "Statistics",
+};
+
+export function glowFor(settings: PostProcessing, component: string): boolean {
+    const name = glowNames[component];
+    return settings.enabled && settings.bloom && name !== undefined && settings.glow[name] !== false;
+}
+
+function flatten(settings: { name: string, value: any }[], into: Record<string, any> = {}) {
+    for (const setting of settings) {
+        if (Array.isArray(setting.value)) {
+            flatten(setting.value, into);
+        } else {
+            into[setting.name] = setting.value;
+        }
+    }
+    return into;
+}
+
+let postProcessingStarted = false;
+
+/**
+ * Follows the module's settings. Does nothing when the add-on is not installed.
+ */
+export function followPostProcessing(getSettings: (name: string) => Promise<any>,
+                                     listenValues: (callback: () => void) => void) {
+    if (postProcessingStarted) {
+        return;
+    }
+    postProcessingStarted = true;
+
+    const refresh = async () => {
+        try {
+            const module = await getSettings("PostProcessing");
+            if (!module || !Array.isArray(module.value)) {
+                postProcessing.update(p => ({...p, enabled: false}));
+                return;
+            }
+            const values = flatten(module.value);
+            postProcessing.set({
+                enabled: values["Enabled"] !== false,
+                bloom: values["Bloom"] === true,
+                radius: Math.max(1, (values["BloomIterations"] ?? 5) * (values["BloomOffset"] ?? 1)),
+                glow: values,
+            });
+        } catch {
+            postProcessing.update(p => ({...p, enabled: false}));
+        }
+    };
+
+    refresh();
+    listenValues(refresh);
+    setInterval(refresh, 2000);
+}

@@ -200,6 +200,11 @@
       "type": "BOOLEAN",
       "name": "TransparentPanels",
       "value": false
+    },
+    {
+      "type": "BOOLEAN",
+      "name": "SyncModuleColors",
+      "value": true
     }
   ]
 }

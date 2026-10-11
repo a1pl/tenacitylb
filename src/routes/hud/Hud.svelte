@@ -14,7 +14,9 @@
         getMetadata,
         getNativeComponents
     } from "../../integration/rest";
-    import {listen} from "../../integration/ws";
+    import {listen, listenAlways} from "../../integration/ws";
+    import {followPostProcessing} from "../../theme/tenacity";
+    import {getModuleSettings} from "../../integration/rest";
     import type {HudComponent, Metadata} from "../../integration/types";
     import Taco from "./elements/taco/Taco.svelte";
     import type {ComponentsUpdateEvent, ScaleFactorChangeEvent} from "../../integration/events";
@@ -48,6 +50,7 @@
     setContext(HUD_EDITOR_ELEMENTS_CONTEXT, new Map<string, HTMLElement>());
 
     onMount(async () => {
+        followPostProcessing(getModuleSettings, refresh => listenAlways("valueChanged", refresh));
         $os = (await getClientInfo()).os;
 
         const gameWindow = await getGameWindow();

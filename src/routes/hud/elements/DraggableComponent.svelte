@@ -1,4 +1,5 @@
 <script lang="ts">
+    import {clientFirst, glowFor, postProcessing, rgba} from "../../../theme/tenacity";
     import {getContext, onMount, tick} from "svelte";
 
     import type {KeyboardKeyEvent, ScaleFactorChangeEvent} from "../../../integration/events";
@@ -25,6 +26,11 @@
     export let width: number | undefined = undefined;
     export let height: number | undefined = undefined;
     export let zIndex = 0;
+
+    // PostProcessing bloom: Tenacity glows its HUD elements in the theme colour
+    $: glowStyle = glowFor($postProcessing, componentName)
+        ? `filter: drop-shadow(0 0 ${$postProcessing.radius}px ${rgba($clientFirst, .55)});`
+        : "";
 
     let scaleFactor = 2;
     let element: HTMLElement | undefined;
@@ -516,7 +522,7 @@
     <!-- svelte-ignore a11y-no-static-element-interactions -->
     <div
             class="contained-element"
-            style={sizeStyleString}
+            style="{sizeStyleString} {glowStyle}"
             class:editor-mode={inEditor}
             class:magnetically-referenced={inEditor && magneticallyReferenced}
             on:mousedown={onMouseDown}
